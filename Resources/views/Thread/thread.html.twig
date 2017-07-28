@@ -187,6 +187,18 @@
                             {% endif %}
                         </div>
                     </div>
+                    <div>
+                       {% if loop.index != 1 and post.user.id != app.user.id %}
+                            <a href="#"
+                                onlick="voteUp({{ post.id }}, this)"
+                            >
+                                Useful
+                            </a>
+                       {% endif %}
+                        {% if post.voteUp > 0 %}
+                            <span class="voteup" id="voteUpLabel_{{ post.id }}">{{ post.voteUp }}</span>
+                        {% endif %}
+                    </div>
                     <div class="wf_clear"></div>
                 </div>
             {% endfor %}

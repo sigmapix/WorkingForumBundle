@@ -93,6 +93,13 @@ class Post
     private $postReport;
 
     /**
+     * @var integer
+     * @ORM\Column(name="voteUp", type="integer", nullable=true)
+     */
+
+    private $voteUp;
+
+    /**
      * Post constructor.
      */
     public function __construct()
@@ -275,4 +282,24 @@ class Post
     {
         return $this->postReport;
     }
+
+    /**
+     * @return int
+     */
+
+    public function getVoteUp()
+    {
+        return $this->voteUp;
+    }
+
+    /**
+     * @return Post
+     */
+
+    public function addVoteUp()
+    {
+        $this->voteUp += 1;
+        return $this;
+    }
+
 }
