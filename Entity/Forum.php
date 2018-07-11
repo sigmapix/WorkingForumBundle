@@ -2,6 +2,8 @@
 
 namespace Yosimitso\WorkingForumBundle\Entity;
 
+use AppBundle\Traits\HasSecteurEntity;
+use AppBundle\Traits\HasSecteurInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Yosimitso\WorkingForumBundle\Util\Slugify;
@@ -14,8 +16,10 @@ use Yosimitso\WorkingForumBundle\Util\Slugify;
  * @ORM\Table(name="workingforum_forum")
  * @ORM\Entity(repositoryClass="Yosimitso\WorkingForumBundle\Entity\ForumRepository")
  */
-class Forum
+class Forum implements HasSecteurInterface
 {
+    use HasSecteurEntity;
+
     /**
      * @var integer
      *

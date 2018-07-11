@@ -27,7 +27,7 @@ class ForumController extends Controller
             ->getDoctrine()
             ->getManager()
             ->getRepository('Yosimitso\WorkingForumBundle\Entity\Forum')
-            ->findAll();
+            ->findBySecteur($this->getUser());
 
         return $this->render(
             'YosimitsoWorkingForumBundle:Forum:index.html.twig',
