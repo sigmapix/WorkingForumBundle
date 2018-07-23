@@ -38,9 +38,9 @@ class ForumRepository extends EntityRepository
                 );
             }
         } else if ($currentUser->isCoiffure() === true) {
-            $qb->where('f.isCoiffure IS TRUE');
+            $qb->where('f.isCoiffure = TRUE');
         } else if ($currentUser->isEsthetique() === true) {
-            $qb->where('f.isEsthetique IS TRUE');
+            $qb->where('f.isEsthetique = TRUE');
         }
 
         // 'OR (f.is_coiffure IS NULL AND f.is_esthetique IS NULL)';
