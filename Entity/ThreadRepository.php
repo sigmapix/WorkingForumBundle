@@ -51,6 +51,9 @@ class ThreadRepository extends EntityRepository
 
         foreach ($keywords as $word)
         {
+            if (!empty($where)) {
+                $where .= 'OR ';
+            }
             $where .= "(a.label LIKE '%" . $word . "%' OR a.subLabel LIKE '%" . $word . "%' OR b.content LIKE '%" . $word . "%') ";
         }
 
