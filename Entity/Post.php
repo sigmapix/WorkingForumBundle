@@ -55,7 +55,7 @@ class Post
     /**
      * @var UserInterface
      *
-     * @ORM\ManyToOne(targetEntity="Yosimitso\WorkingForumBundle\Entity\User")
+     * @ORM\ManyToOne(targetEntity="Application\Sonata\UserBundle\Entity\User", inversedBy="posts")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=true)
      */
     private $user;
@@ -121,7 +121,7 @@ class Post
     }
 
     /**
-     * @return ArrayCollection
+     * @return Thread
      */
     public function getThread()
     {
